@@ -4,8 +4,8 @@ from fastapi.templating import Jinja2Templates
 from pymongo.errors import PyMongoError
 import stripe
 
-from db.db import mongo_is_available, save_client_signup
-from services.payments import (
+from app.db.db import mongo_is_available, save_client_signup
+from app.services.payments import (
     create_coffee_checkout_session,
     stripe_is_configured,
 )
@@ -37,7 +37,7 @@ def build_signup_context(
 # ---------------------------
 
 router = APIRouter()
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="app/templates")
 BLOG_ACCESS_OPTIONS = {"Blog + CV access", "Blog only"}
 
 @router.get("/", response_class=HTMLResponse)
