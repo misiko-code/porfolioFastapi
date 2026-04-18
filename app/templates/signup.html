@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+
+{% block title %}Signup | Emmanuel Misiko{% endblock %}
+
+{% block content %}
+<main class="container py-10">
+  <section class="max-w-6xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
+    <div class="rounded-3xl border border-[#14f2d7]/20 bg-[#111]/90 p-8 shadow-2xl shadow-black/20">
+      <p class="uppercase tracking-[0.35em] text-xs text-[#14f2d7] mb-4">Member Access</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+        Sign up for blog access, CV downloads, and a few nice extras.
+      </h1>
+      <p class="text-gray-300 text-base md:text-lg leading-7 max-w-2xl">
+        Create a simple member account to read blog posts, unlock the CV page,
+        and optionally ask for a direct message, a personal call, or a coffee link.
+      </p>
+
+      <div class="grid sm:grid-cols-3 gap-4 mt-8">
+        <article class="rounded-2xl border border-[#14f2d7]/15 bg-[#171717] p-5">
+          <h2 class="text-lg font-semibold text-[#14f2d7] mb-2">Blog Access</h2>
+          <p class="text-sm text-gray-400 leading-6">
+            Get access to engineering notes, lessons, and project stories.
+          </p>
+        </article>
+        <article class="rounded-2xl border border-[#14f2d7]/15 bg-[#171717] p-5">
+          <h2 class="text-lg font-semibold text-[#14f2d7] mb-2">CV Download</h2>
+          <p class="text-sm text-gray-400 leading-6">
+            Unlock the CV and any simple downloadable resources you choose to add.
+          </p>
+        </article>
+        <article class="rounded-2xl border border-[#14f2d7]/15 bg-[#171717] p-5">
+          <h2 class="text-lg font-semibold text-[#14f2d7] mb-2">Optional Extras</h2>
+          <p class="text-sm text-gray-400 leading-6">
+            Later, members can request a chat or support the work with coffee.
+          </p>
+        </article>
+      </div>
+    </div>
+
+    <div class="rounded-3xl border border-white/10 bg-[#1a1a1a]/95 p-8 shadow-2xl">
+      <div class="flex items-center justify-between gap-4 mb-6">
+        <div>
+          <p class="text-sm uppercase tracking-[0.3em] text-gray-400">Create Access</p>
+          <h2 class="text-2xl font-bold">Signup Form</h2>
+        </div>
+        <a
+          href="/"
+          class="rounded-full border border-[#14f2d7]/40 px-4 py-2 text-sm text-[#14f2d7] hover:bg-[#14f2d7]/10 transition"
+        >
+          Back Home
+        </a>
+      </div>
+
+      <div class="mb-6 rounded-2xl border border-white/10 bg-[#111] p-4 text-sm">
+        <p class="text-sm text-gray-200 leading-6">
+        <span class="font-semibold text-white">Database status:</span>
+        {% if db_status %}
+        <span class="text-emerald-300">Connected</span>
+        {% else %}
+        <span class="text-amber-300">Not connected yet</span>
+        {% endif %}
+        </p>
+        <p class="text-sm text-gray-200 leading-6">
+        <span class="font-semibold text-white">Stripe status:</span>
+        {% if stripe_ready %}
+        <span class="text-emerald-300">Ready for checkout</span>
+        {% else %}
+        <span class="text-amber-300">Not configured yet</span>
+        {% endif %}
+      </p>
+      </div>
+      {% if payment_message %}
+      <div class="mb-6 rounded-2xl border border-sky-400/30 bg-sky-400/10 p-4">
+        <h3 class="text-sky-300 font-semibold mb-2">Coffee support</h3>
+        <p class="text-sm text-gray-200 leading-6">
+          {{ payment_message }}
+        </p>
+      </div>
+      {% endif %}
+
+      {% if success %}
+      <div class="mb-6 rounded-2xl border border-emerald-400/30 bg-emerald-400/10 p-4">
+        <h3 class="text-emerald-300 font-semibold mb-2">Signup captured</h3>
+        <p class="text-sm text-gray-200 leading-6">
+          Thanks {{ form_data.full_name }}. Your request for
+          <span class="text-white font-medium">{{ form_data.access_request }}</span>
+          has been received.
+          {% if form_data.get('extras_interest') and form_data.get('extras_interest') != 'No extra for now' %}
+          Extra interest noted:
+          <span class="text-white font-medium">{{ form_data.extras_interest }}</span>.
+          {% endif %}
+        </p>
+      </div>
+      {% endif %}
+
+      {% if error_message %}
+      <div class="mb-6 rounded-2xl border border-amber-400/30 bg-amber-400/10 p-4">
+        <h3 class="text-amber-300 font-semibold mb-2">Database unavailable</h3>
+        <p class="text-sm text-gray-200 leading-6">
+          {{ error_message }}
+        </p>
+      </div>
+      {% endif %}
+
+      <form method="post" action="/signup" class="space-y-5">
+        <div>
+          <label for="full_name" class="block text-sm font-medium text-gray-200 mb-2">Full name</label>
+          <input
+            id="full_name"
+            name="full_name"
+            type="text"
+            required
+            value="{{ form_data.get('full_name', '') }}"
+            class="w-full rounded-2xl border border-white/10 bg-[#101010] px-4 py-3 text-white outline-none focus:border-[#14f2d7]"
+            placeholder="Your full name"
+          >
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-200 mb-2">Email address</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            value="{{ form_data.get('email', '') }}"
+            class="w-full rounded-2xl border border-white/10 bg-[#101010] px-4 py-3 text-white outline-none focus:border-[#14f2d7]"
+            placeholder="you@example.com"
+          >
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="access_request" class="block text-sm font-medium text-gray-200 mb-2">Access</label>
+            <select
+              id="access_request"
+              name="access_request"
+              required
+              class="w-full rounded-2xl border border-white/10 bg-[#101010] px-4 py-3 text-white outline-none focus:border-[#14f2d7]">
+
+              <!-- prettier-ignore -->
+              <option value="Blog + CV access" {% if form_data.get("access_request") == "Blog + CV access" %}selected{% endif %}>Blog + CV access</option>
+              <option value="Blog only" {% if form_data.get("access_request") == "Blog only" %}selected{% endif %}>Blog only</option>
+              <option value="CV only" {% if form_data.get("access_request") == "CV only" %}selected{% endif %}>CV only</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="extras_interest" class="block text-sm font-medium text-gray-200 mb-2">Optional extra</label>
+            <select
+              id="extras_interest"
+              name="extras_interest"
+              class="w-full rounded-2xl border border-white/10 bg-[#101010] px-4 py-3 text-white outline-none focus:border-[#14f2d7]"
+            >
+              <option value="No extra for now" {% if form_data.get('extras_interest') == 'No extra for now' %}selected{% endif %}>No extra for now</option>
+              <option value="Direct message" {% if form_data.get('extras_interest') == 'Direct message' %}selected{% endif %}>Direct message</option>
+              <option value="Personal call" {% if form_data.get('extras_interest') == 'Personal call' %}selected{% endif %}>Personal call</option>
+              <option value="Buy me a coffee link" {% if form_data.get('extras_interest') == 'Buy me a coffee link' %}selected{% endif %}>Buy me a coffee link</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="notes" class="block text-sm font-medium text-gray-200 mb-2">Notes</label>
+          <textarea
+            id="notes"
+            name="notes"
+            rows="4"
+            class="w-full rounded-2xl border border-white/10 bg-[#101010] px-4 py-3 text-white outline-none focus:border-[#14f2d7]"
+            placeholder="Anything you'd like me to know?"
+          >{{ form_data.get('notes', '') }}</textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full rounded-2xl bg-[#14f2d7] px-5 py-3 font-semibold text-black transition hover:scale-[1.01]"
+        >
+          Create member access
+        </button>
+      </form>
+
+      <div class="mt-8 rounded-2xl border border-[#14f2d7]/20 bg-[#121212] p-5">
+        <h3 class="text-lg font-semibold text-[#14f2d7] mb-2">Buy me a coffee</h3>
+        <p class="text-sm text-gray-400 leading-6 mb-4">
+          If you want to support the blog and portfolio, you can use Stripe Checkout here.
+        </p>
+        <form method="post" action="/support/checkout" class="space-y-4">
+          <input
+            type="email"
+            name="email"
+            class="w-full rounded-2xl border border-white/10 bg-[#101010] px-4 py-3 text-white outline-none focus:border-[#14f2d7]"
+            placeholder="Optional email for checkout"
+          >
+          <input
+            type="number"
+            name="amount"
+            class="w-full rounded-2xl border border-white/10 bg-[#101010] px-4 py-3 text-white outline-none focus:border-[#14f2d7]"
+            min="1"
+            max="5000"
+            step="1"
+            placeholder="Amount (€)"
+            required
+          />
+          <button
+            type="submit"
+            class="w-full rounded-2xl border border-[#14f2d7]/40 px-5 py-3 font-semibold text-[#14f2d7] transition hover:bg-[#14f2d7]/10"
+          >
+            Proceed to checkout
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

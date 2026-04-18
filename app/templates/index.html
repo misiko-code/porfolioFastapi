@@ -1,0 +1,1082 @@
+{% extends "base.html" %} {% block title %}Emmanuel Misiko | Portfolio{%
+endblock %} {% block content %}
+<div class="container">
+  <nav
+    class="sticky top-3 z-50 mb-6 rounded-full border border-white/10 bg-[#0f0f0f]/80 px-3 py-3 shadow-xl backdrop-blur-md"
+  >
+    <div class="flex items-center justify-between gap-3">
+      <a
+        href="#home"
+        class="px-3 text-sm font-bold tracking-[0.25em] text-[#14f2d7]"
+      >
+        EM
+      </a>
+      <div
+        class="flex flex-1 items-center justify-center gap-2 overflow-x-auto whitespace-nowrap text-sm text-gray-300"
+      >
+        <a href="#home" class="nav-pill">Home</a>
+        <a href="#expertise" class="nav-pill">Expertise</a>
+        <a href="#innovation" class="nav-pill">Projects</a>
+        <a href="#experience" class="nav-pill">Experience</a>
+        <a href="#gallery" class="nav-pill">Gallery</a>
+        <a href="#contact" class="nav-pill">Contact</a>
+      </div>
+      <a
+        href="/signup"
+        class="rounded-full bg-[#14f2d7] px-4 py-2 text-sm font-semibold text-black transition hover:scale-105"
+      >
+        Sign Up
+      </a>
+    </div>
+  </nav>
+
+  <!-- INTRO -->
+  <section
+    id="home"
+    class="section-container w-full md:max-w-4xl md:mx-auto flex flex-col md:flex-row gap-2 rounded-xl overflow-hidden relative z-10 mb-5"
+    style="background: linear-gradient(135deg, #162a2b 0%, #2c1f4a 100%)"
+  >
+    <!-- LANGUAGE TOGGLE -->
+    <div class="fixed top-4 right-6 z-50 text-right select-none">
+      <button
+        id="langToggle"
+        class="lang-toggle-btn lang-pulse flex items-center gap-2"
+      >
+        🇩🇪 DE
+      </button>
+    </div>
+
+    <div class="flex-1 p-1">
+      <div class="mb-4 flex flex-wrap gap-3">
+        <a
+          href="/signup"
+          class="rounded-full bg-[#14f2d7] px-5 py-2 text-sm font-semibold text-black transition hover:scale-105"
+        >
+          Click to Get personal
+        </a>
+      </div>
+      <h1
+        class="text-5xl font-extrabold mb-2"
+        data-en="Hi, I'm Emmanuel the Mechatronics Engineer"
+        data-de="Hallo, ich bin Emmanuel, Mechatronikingenieur"
+      >
+        Hi, I'm <span class="text-[#14f2d7]">Emmanuel</span> the
+        <span class="text-[#14f2d7]"> Mechatronics Engineer</span>
+      </h1>
+
+      <p
+        class="text-gray-300 max-w-none md:max-w-xl"
+        data-en="Technical specialist in industrial automation, mechatronics, smart manufacturing and system optimization."
+        data-de="Technischer Spezialist für industrielle Automatisierung, Mechatronik, intelligente Fertigung und Systemoptimierung."
+      >
+        Technical specialist in industrial automation, mechatronics, smart
+        manufacturing and system optimization.
+      </p>
+      <p
+        class="text-gray-300 max-w-none md:max-w-xl mt-2"
+        data-en="Currently studying Masters in Mechanics - Technische Universität Darmstadt, Germany."
+        data-de="Derzeit Masterstudium in Mechanik - Technische Universität Darmstadt, Deutschland."
+      >
+        Currently studying Masters in Mechanics - Technische Universität
+        Darmstadt, Germany.
+      </p>
+    </div>
+
+    <div class="flex-1 relative p-2 flex justify-center">
+      <div class="intro-glow"></div>
+      <div class="w-60 h-80 overflow-hidden rounded-xl relative shadow-lg">
+        <img
+          src="/photos/DSC_0344 (5).jpg"
+          class="w-full h-full object-cover rounded-xl shadow-xl relative"
+        />
+      </div>
+      <div
+        class="absolute top-0 right-0 w-24 h-48 bg-[#14f2d7] opacity-40 clip-path-triangle"
+      ></div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section
+    id="expertise"
+    class="section-container max-w-8xl w-full mb-10 relative z-10"
+  >
+    <div
+      class="grid grid-cols-3 gap-px rounded-xl overflow-hidden bg-[#14f2d7]/20"
+    >
+      <div class="stat-card bg-[#1b1b1b] p-6 md:p-8 text-center rounded-lg">
+        <div
+          class="stat-number text-4xl font-extrabold text-[#14f2d7]"
+          data-target="8"
+        >
+          &lt; 2
+        </div>
+        <p
+          class="text-sm text-gray-400 tracking-wide mt-1"
+          data-en="Years Experience"
+          data-de="Jahre Erfahrung"
+        >
+          Years Experience
+        </p>
+      </div>
+      <div class="stat-card bg-[#1b1b1b] p-6 md:p-8 text-center rounded-lg">
+        <div
+          class="stat-number text-4xl font-extrabold text-[#14f2d7]"
+          data-target="23"
+        >
+          23+
+        </div>
+        <p
+          class="text-sm text-gray-400 tracking-wide mt-1"
+          data-en="Projects Delivered"
+          data-de="Projekte geliefert"
+        >
+          Projects Delivered
+        </p>
+      </div>
+      <div class="stat-card bg-[#1b1b1b] p-6 md:p-8 text-center rounded-lg">
+        <div class="text-4xl font-extrabold text-[#14f2d7]">🏆</div>
+        <p
+          class="text-sm text-gray-400 tracking-wide mt-1"
+          data-en="Winner JKUAT Tech Expo 11.0"
+          data-de="Gewinner der JKUAT Tech Expo 11.0"
+        >
+          Winner JKUAT Tech Expo 11.0
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE STRIP -->
+  <div class="relative z-10 mb-10">
+    <div
+      class="absolute left-1/2 -translate-x-1/2 w-[700px] h-[2px] bg-gradient-to-r from-transparent via-[#14f2d7] to-transparent opacity-50"
+    ></div>
+  </div>
+
+  <section class="section-container max-w-8xl w-full mb-10 relative z-10">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div
+        class="reveal expertise-card bg-[#1d1d1d] p-4 rounded-xl border border-[#14f2d7]/20 hover:border-[#14f2d7]/60 transition"
+      >
+        <div class="expertise-header">
+          <div class="expertise-icon">⚙️</div>
+          <h3
+            class="expertise-title"
+            data-en="Automation Systems"
+            data-de="Automatisierungssysteme"
+          >
+            Automation Systems
+          </h3>
+        </div>
+        <p
+          class="expertise-desc"
+          data-en="PLC programming, HMI design, diagnostics, and production line optimization."
+          data-de="SPS-Programmierung, HMI-Design, Diagnose und Optimierung von Produktionslinien."
+        >
+          PLC programming, HMI design, diagnostics, and production line
+          optimization.
+        </p>
+      </div>
+      <div
+        class="reveal expertise-card bg-[#1d1d1d] p-4 rounded-xl border border-[#14f2d7]/20 hover:border-[#14f2d7]/60 transition"
+      >
+        <div class="expertise-header">
+          <div class="expertise-icon">🤖</div>
+          <h3
+            class="expertise-title"
+            data-en="Robotics Integration"
+            data-de="Robotik-Integration"
+          >
+            Robotics Integration
+          </h3>
+        </div>
+        <p
+          class="expertise-desc"
+          data-en="Industrial robots, safety systems, commissioning, and performance tuning."
+          data-de="Industrieroboter, Sicherheitssysteme, Inbetriebnahme und Leistungsoptimierung."
+        >
+          Industrial robots, safety systems, commissioning, and performance
+          tuning.
+        </p>
+      </div>
+      <div
+        class="reveal expertise-card bg-[#1d1d1d] p-4 rounded-xl border border-[#14f2d7]/20 hover:border-[#14f2d7]/60 transition"
+      >
+        <div class="expertise-header">
+          <div class="expertise-icon">📊</div>
+          <h3
+            class="expertise-title"
+            data-en="Smart Maintenance"
+            data-de="Intelligente Wartung"
+          >
+            Smart Maintenance
+          </h3>
+        </div>
+        <p
+          class="expertise-desc"
+          data-en="Sensor data, condition monitoring, and predictive maintenance strategies."
+          data-de="Sensordaten, Zustandsüberwachung und vorausschauende Instandhaltungsstrategien."
+        >
+          Sensor data, condition monitoring, and predictive maintenance
+          strategies.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK STRIP -->
+  <section class="max-w-6xl w-full mb-10 relative z-10 overflow-hidden">
+    <div
+      class="flex gap-16 items-center animate-tech-scroll text-gray-400 text-sm tracking-wide"
+    >
+      <span class="flex items-center gap-2">⚡ Siemens PLC</span>
+      <span class="flex items-center gap-2">🤖 ABB Robotics</span>
+      <span class="flex items-center gap-2">🧠 TIA Portal</span>
+      <span class="flex items-center gap-2">📊 Predictive Analytics</span>
+      <span class="flex items-center gap-2">🔧 Industrial Sensors</span>
+      <span class="flex items-center gap-2">🛡 SAP Systems</span>
+      <span class="flex items-center gap-2">💼 MS Office</span>
+      <span class="flex items-center gap-2"
+        >💻 Embedded Systems Programming</span
+      >
+
+      <!-- duplicate for seamless loop -->
+      <span class="flex items-center gap-2">⚡ Siemens PLC</span>
+      <span class="flex items-center gap-2">🤖 ABB Robotics</span>
+      <span class="flex items-center gap-2">🧠 TIA Portal</span>
+      <span class="flex items-center gap-2">📊 Predictive Analytics</span>
+      <span class="flex items-center gap-2">🔧 Industrial Sensors</span>
+      <span class="flex items-center gap-2">🛡 SAP Systems</span>
+      <span class="flex items-center gap-2">💼 MS Office</span>
+      <span class="flex items-center gap-2"
+        >💻 Embedded Systems Programming</span
+      >
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="w-full flex flex-col gap-10 relative z-10" id="innovation">
+    <!-- Expo -->
+    <section class="max-w-4xl w-full relative z-10">
+      <h2
+        class="text-3xl font-bold text-center md:text-left"
+        data-en="🏆 Breakthrough Project"
+        data-de="🏆 Durchbruchprojekt"
+      >
+        <span class="text-[#14f2d7]"><b>🏆 Breakthrough</b></span> Project
+      </h2>
+
+      <!-- Glow divider -->
+      <div
+        class="mt-2 h-[2px] w-32 bg-gradient-to-r from-[#14f2d7] to-transparent"
+      ></div>
+    </section>
+    <section class="project-tab reveal">
+      <div class="project flex flex-col md:flex-row gap-10 items-center">
+        <div class="project-collage">
+          <div class="project-image ratio-tall img expand">
+            <img src="/photos/expo4.JPG" />
+          </div>
+          <div class="project-image ratio-tall img expand">
+            <img src="/photos/expo3.JPG" />
+          </div>
+        </div>
+
+        <div class="card md:w-1/2 bg-[#222] p-6 rounded-xl">
+          <h3 class="text-[#14f2d7] text-xl font-bold mb-2">
+            Robotics Integration
+          </h3>
+          <p
+            data-en="The automated aquaponics system using IoT, was a robotics integration breakthrough, designed to optimize fish and plant growth through automated monitoring and control of environmental parameters. I had designed a fully autonomous system that could be monitored remotely. A project that won the JKUAT Tech Expo 11.0 competition and earned national recognition at KENIA innovation week. The project was a holistic combination of robotics, IoT, using: HMI for user interface, phone application for remote monitoring, raspberry PI microprocessor and linux system for optimization."
+            data-de="Das automatisierte Aquaponiksystem unter Nutzung von IoT war ein Durchbruch in der Robotik-Integration. Es wurde entwickelt, um das Wachstum von Fischen und Pflanzen durch automatisierte Überwachung und Steuerung von Umweltparametern zu optimieren. Ich entwickelte ein vollständig autonomes System, das aus der Ferne überwacht werden konnte. Das Projekt gewann den Wettbewerb der JKUAT Tech Expo 11.0 und erhielt nationale Anerkennung während der KENIA Innovation Week. Es kombinierte Robotik und IoT unter Einsatz von HMI für die Benutzeroberfläche, einer mobilen Anwendung zur Fernüberwachung sowie Raspberry-Pi-Mikroprozessoren und Linux-Systemen zur Optimierung."
+          >
+            The automated aquaponics system using IoT, was a robotics
+            intergration breakthrough, designed to optimize fish and plant
+            growth through automated monitoring and control of environmental
+            parameters. I had designed a fully autonomous system that could be
+            monitored remotely. A project that won the JKUAT Tech Expo 11.0
+            competition and earned national recognition at KENIA innovation
+            week. The project was a holistic combination of robotics, IoT,
+            using: HMI for user interface, phone application for remote
+            monitoring, raspberry PI microprocessor and linux system for
+            optimization. Robotic production lines with safety, diagnostics and
+            optimization.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section-container reveal w-full md:max-w-5xl md:mx-auto mt-2 mb-6 relative z-10"
+    >
+      <div
+        class="access-panel rounded-[2rem] border border-[#14f2d7]/20 bg-[#141414]/95 p-5 md:p-8 overflow-hidden"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-[#14f2d7]/8 via-transparent to-[#14f2d7]/6 pointer-events-none"
+        ></div>
+        <div class="relative z-10">
+          <p class="text-xs uppercase tracking-[0.35em] text-[#14f2d7] mb-3">
+            Private Access
+          </p>
+          <div class="grid md:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
+            <div>
+              <h2
+                class="text-3xl md:text-4xl font-extrabold leading-tight mb-4"
+              >
+                Want in on the good stuff?
+              </h2>
+              <p class="text-gray-300 text-base md:text-lg leading-7 max-w-2xl">
+                Get blog updates, a direct line for a call or message, and a
+                small coffee-support option.
+              </p>
+            </div>
+
+            <div class="grid gap-4">
+              <article
+                class="rounded-2xl border border-white/10 bg-[#1b1b1b] p-4"
+              >
+                <h3 class="text-lg font-semibold text-[#14f2d7] mb-2">
+                  Blogs Access
+                </h3>
+                <p class="text-sm text-gray-400 leading-6">
+                  Fresh notes, lessons, and engineering stories.
+                </p>
+              </article>
+              <article
+                class="rounded-2xl border border-white/10 bg-[#1b1b1b] p-4"
+              >
+                <h3 class="text-lg font-semibold text-[#14f2d7] mb-2">
+                  Direct Message or Call
+                </h3>
+                <p class="text-sm text-gray-400 leading-6">
+                  Reach out for a personal chat, call, or quick guidance.
+                </p>
+              </article>
+              <article
+                class="rounded-2xl border border-white/10 bg-[#1b1b1b] p-4"
+              >
+                <h3 class="text-lg font-semibold text-[#14f2d7] mb-2">
+                  Buy Me a Coffee
+                </h3>
+                <p class="text-sm text-gray-400 leading-6">
+                  A simple way to support the work and cheer me on.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="mt-6 flex flex-wrap gap-4">
+            <a
+              href="/signup"
+              class="rounded-full bg-[#14f2d7] px-6 py-3 text-sm font-semibold text-black transition hover:scale-105 shadow-lg"
+            >
+              Sign Up for Access
+            </a>
+            <a
+              href="/signup"
+              class="rounded-full border border-[#14f2d7]/40 px-6 py-3 text-sm font-semibold text-[#14f2d7] transition hover:bg-[#14f2d7]/10"
+            >
+              Support with Coffee
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- PROFILE SEGMENT -->
+
+    <section
+      class="section-container fun-fact fun-fact-tab glow-mobile reveal w-full md:max-w-4xl md:mx-auto bg-[#1b1b1b] rounded-xl p-2 mb-5 relative z-10 flex flex-col md:flex-row gap-6 items-center shadow-lg"
+    >
+      <div
+        class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-[#14f2d7] flex-shrink-0"
+      >
+        <img
+          src="/photos/DSC_0344 (5).jpg"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="flex-1 text-center md:text-left">
+        <section
+          class="section-container profile-content relative z-10 max-w-4xl mx-auto bg-[#1b1b1b] rounded-xl p-2"
+        >
+          <section class="profile-content">
+            <h3 class="text-2xl font-bold text-[#14f2d7] mb-2">Emmanuel</h3>
+            <span
+              class="absolute top-0 left-0 text-6xl md:text-8xl text-[#14f2d7] opacity-20 select-none"
+              >“</span
+            >
+            <span
+              class="absolute bottom-0 right-0 text-6xl md:text-8xl text-[#14f2d7] opacity-20 select-none"
+              >”</span
+            >
+            <p
+              class="relative text-gray-300 text-sm md:text-base z-10"
+              data-en="In an era where information is abundant, I believe the true value lies in the ability to distill complex data into actionable insights that drive efficiency and innovation."
+              data-de="In einer Zeit, in der Informationen im Überfluss vorhanden sind, liegt der wahre Wert für mich in der Fähigkeit, komplexe Daten in umsetzbare Erkenntnisse zu verdichten, die Effizienz und Innovation vorantreiben."
+            >
+              In an era where information is abundant, I believe the true value
+              lies in the ability to distill complex data into actionable
+              insights that drive efficiency and innovation. My journey has been
+              fueled by a relentless curiosity and a commitment to excellence,
+              enabling me to tackle challenges head-on and deliver solutions
+              that not only meet but exceed expectations.
+            </p>
+            <p
+              class="fun-fact-text relative text-gray-300 text-sm md:text-base mt-4 z-10"
+              data-en="Machines fail from dirt, wear and tear, and unforeseen issues. My goal is to leverage technology to predict and prevent these failures."
+              data-de="Maschinen versagen durch Verschmutzung, Verschleiß und unvorhergesehene Probleme. Mein Ziel ist es, Technologie zu nutzen, um diese Ausfälle vorherzusagen und zu verhindern."
+            >
+              Machines fail from dirt, wear and tear, and unforeseen issues. My
+              goal is to leverage technology to predict and prevent these
+              failures.
+            </p>
+          </section>
+          <div
+            class="mt-4 flex gap-2 flex-wrap justify-center md:justify-start text-sm text-gray-400"
+          >
+            <span
+              class="flex items-center gap-1 bg-[#14f2d7]/10 px-3 py-1 rounded-full"
+              >⚡ Linux systems</span
+            >
+            <span
+              class="flex items-center gap-1 bg-[#14f2d7]/10 px-3 py-1 rounded-full"
+              >🤖 ABB Robotics</span
+            >
+            <span
+              class="flex items-center gap-1 bg-[#14f2d7]/10 px-3 py-1 rounded-full"
+              >🧠 TIA Portal</span
+            >
+            <span
+              class="flex items-center gap-1 bg-[#14f2d7]/10 px-3 py-1 rounded-full"
+              >💻 Embedded Systems</span
+            >
+            <span
+              class="flex items-center gap-1 bg-[#14f2d7]/10 px-3 py-1 rounded-full"
+              >📊 Predictive Analytics</span
+            >
+            <span
+              class="flex items-center gap-1 bg-[#14f2d7]/10 px-3 py-1 rounded-full"
+              >💼 MS Office</span
+            >
+            <span
+              class="flex items-center gap-1 bg-[#14f2d7]/10 px-3 py-1 rounded-full"
+              >🔧 Industrial Sensors</span
+            >
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE HEADING -->
+    <section id="experience" class="max-w-4xl w-full mb-10 relative z-10">
+      <h2
+        class="text-3xl font-bold text-center md:text-left"
+        data-en="🛠️ Work Experience 🛠️"
+        data-de="🛠️ Berufserfahrung 🛠️"
+      >
+        <span class="text-[#14f2d7]"> 🛠️Work</span> Experience 🛠️
+      </h2>
+
+      <!-- Glow divider -->
+      <div
+        class="mt-2 h-[2px] w-32 bg-gradient-to-r from-[#14f2d7] to-transparent"
+      ></div>
+    </section>
+
+    <!-- Project 2 (Robotics Integration) -->
+    <section class="project-tab reveal" id="Primary Manufacturing">
+      <div
+        class="section-container project flex flex-col md:flex-row-reverse gap-10 items-center"
+      >
+        <div class="project-collage">
+          <div class="project-image ratio-tall img expand">
+            <img src="/photos/kengen2.JPG" alt="Kengen machining" />
+          </div>
+          <div class="project-image ratio-tall img expand">
+            <img src="/photos/kengen1-1.JPG" alt="Robotics Integration" />
+          </div>
+        </div>
+
+        <div class="card md:w-1/2 bg-[#222] p-6 rounded-xl">
+          <h3 class="text-[#14f2d7] text-xl font-bold mb-2">
+            Primary Manufacturing Processes
+          </h3>
+          <p
+            data-en="Demonstration of capabilities in primary manufacturing processes which include machining, assembly, and quality control."
+            data-de="Darstellung von Fähigkeiten in primären Fertigungsprozessen wie Bearbeitung, Montage und Qualitätskontrolle."
+          >
+            Demonstration of capabilities in
+            <strong>primary manufacturing processes</strong> which include:
+            machining, assembly, and quality control. The photos depict my
+            hands-on experience in Tinning of journal bearings and assembling of
+            turbine parts at the Olkaria Geothermal Power Plant.
+          </p>
+        </div>
+        <!-- Glow divider -->
+        <div
+          class="h-[2px] w-32 bg-gradient-to-r from-[#14f2d7] to-transparent"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Project 3 (Predictive Maintenance) -->
+    <section class="project-tab reveal" id="predictive-maintenance">
+      <div
+        class="section-container project flex flex-col md:flex-row gap-10 items-center"
+      >
+        <div class="project-collage">
+          <div class="project-image ratio-tall img expand">
+            <img src="/photos/Batvibration.jpg" alt="Vibration Analysis" />
+          </div>
+          <div class="project-image ratio-tall img expand">
+            <img src="/photos/Bat3.jpg" alt="Robotics Integration" />
+          </div>
+        </div>
+
+        <div class="card md:w-1/2 bg-[#222] p-6 rounded-xl">
+          <h3 class="text-[#14f2d7] text-xl font-bold mb-2">
+            Predictive Maintenance
+          </h3>
+          <p
+            data-en="Imagine a factory where machines can predict their own breakdowns before they happen through sensor-based monitoring and data-driven maintenance strategies."
+            data-de="Stellen Sie sich eine Fabrik vor, in der Maschinen ihre eigenen Ausfälle vorhersagen können, bevor sie auftreten – durch sensorbasierte Überwachung und datengetriebene Instandhaltungsstrategien."
+          >
+            Imagine a factory where machines can predict their own breakdowns
+            before they happen, through Sensor-based monitoring and data-driven
+            maintenance strategies. That's what I specialize in, using vibration
+            meters and routine lubrication inspection analysis to achieve
+            predictive maintenance. A huge part of loss elimination in
+            manufacturing. Sensor-based monitoring and data-driven maintenance
+            strategies
+          </p>
+        </div>
+        <!-- Glow divider -->
+        <div
+          class="h-[2px] w-32 bg-gradient-to-r from-[#14f2d7] to-transparent"
+        ></div>
+      </div>
+    </section>
+
+    <!-- FUN FACT TAB -->
+    <section
+      class="section-container glow-mobile fun-fact fun-fact-tab reveal w-full md:max-w-4xl md:mx-auto bg-[#1b1b1b] rounded-xl p-1 mb-5 mt-5 relative z-10 flex flex-col md:flex-row gap-6 items-center shadow-lg"
+    >
+      <!-- Icon / Visual -->
+      <div
+        class="w-20 h-20 md:w-40 md:h-40 rounded-full flex items-center justify-center bg-[#14f2d7]/20 border-4 border-[#14f2d7] text-5xl flex-shrink-0"
+      >
+        💡
+      </div>
+
+      <!-- Content -->
+      <div class="flex-1 text-center md:text-left relative">
+        <section
+          class="section-container fun-fact-tab-content relative z-10 max-w-4xl mx-auto bg-[#1b1b1b] rounded-xl p-8"
+        >
+          <h3
+            class="text-2xl font-bold text-[#14f2d7] mb-6"
+            data-en="Fun Facts – Do You Know?"
+            data-de="Fun Facts – Wusstest du schon?"
+          >
+            Fun Facts – Do You Know?
+          </h3>
+
+          <!-- Decorative quotes (same style as profile) -->
+          <span
+            class="absolute top-0 left-0 text-6xl mt-3 md:text-8xl text-[#14f2d7] opacity-20 select-none"
+            >“</span
+          >
+          <span
+            class="absolute bottom-0 right-0 text-6xl md:text-8xl text-[#14f2d7] opacity-20 select-none"
+            >”</span
+          >
+          <p
+            class="fun-fact-text text-gray-300 text-sm md:text-base z-10"
+            data-en="Emmanuel has worked at the Olkaria Geothermal Power Plant, home to the largest single-turbine unit on the continent, at 83.3MW — contributing to clean, renewable energy generation."
+            data-de="Emmanuel arbeitete im Geothermiekraftwerk Olkaria, das die größte Einzelturbinenanlage des Kontinents mit 83,3 MW beherbergt und zur sauberen, erneuerbaren Energieerzeugung beiträgt."
+          >
+            Emmanuel has worked at the
+            <strong>Olkaria Geothermal Power Plant</strong>, home to the
+            <strong>largest single-turbine unit on the continent</strong>, at
+            83.3MW — contributing to clean, renewable energy generation. 😉
+          </p>
+
+          <p
+            class="relative text-gray-300 text-sm md:text-base mt-2 z-10"
+            data-en="He has also gained experience working with British American Tobacco, a global manufacturing organization operating in over 180 markets worldwide."
+            data-de="Er sammelte außerdem Erfahrung bei British American Tobacco, einem globalen Produktionsunternehmen, das in über 180 Märkten weltweit tätig ist."
+          >
+            He has also gained experience working with
+            <strong>British American Tobacco</strong>, a global manufacturing
+            organization operating in over
+            <strong>180 markets worldwide</strong>. 💪
+          </p>
+        </section>
+        <!-- Tags -->
+        <div
+          class="mt-4 flex gap-2 flex-wrap justify-center md:justify-start text-sm text-gray-400"
+        >
+          <span
+            class="flex items-center gap-1 bg-[#14f2d7]/10 px-3 py-1 rounded-full"
+          >
+            ⚡ Geothermal Energy
+          </span>
+          <span
+            class="flex items-center gap-1 bg-[#14f2d7]/10 px-3 py-1 rounded-full"
+          >
+            🏭 Industrial Manufacturing
+          </span>
+          <span
+            class="flex items-center gap-1 bg-[#14f2d7]/10 px-3 py-1 rounded-full"
+          >
+            🤖 Automation Systems
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project 3 (Electrical Inspection) -->
+
+    <section class="project-tab reveal">
+      <div
+        class="section-container project flex flex-col md:flex-row-reverse gap-10 items-center"
+      >
+        <div class="project-collage">
+          <div class="project-image ratio-tall img expand">
+            <img src="/photos/electrical1.JPG" alt="Vibration Analysis" />
+          </div>
+          <div class="project-image ratio-tall img expand">
+            <img src="/photos/electrical2.JPG" alt="Robotics Integration" />
+          </div>
+        </div>
+
+        <div class="card md:w-1/2 bg-[#222] p-6 rounded-xl">
+          <h3 class="text-[#14f2d7] text-xl font-bold mb-2">
+            Electrical Inspection
+          </h3>
+          <p
+            data-en="Routine electrical systems inspection and maintenance ensures operational safety and efficiency in industrial settings.
+I have conducted inspections involving thermal imaging, insulation resistance testing using the 
+         Megger tester."
+            data-de="Die routinemäßige Inspektion und Wartung elektrischer Systeme gewährleistet Betriebssicherheit und Effizienz in industriellen Umgebungen.
+Ich habe Inspektionen durchgeführt, die Wärmebildaufnahmen und Isolationswiderstandsprüfungen mit dem Megger-Messgerät umfassten."
+          >
+            Routine electrical systems inspection and maintenance ensures
+            operational safety and efficiency in industrial settings. I have
+            conducted inspections involving thermal imaging, insulation
+            resistance testing using the Megger tester.
+          </p>
+        </div>
+        <div
+          class="h-[2px] w-32 bg-gradient-to-r from-[#14f2d7] to-transparent"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Project 3 (Programming (c#, python, linux)) -->
+    <section class="project-tab reveal">
+      <div
+        class="section-containerproject flex flex-col md:flex-row gap-10 items-center"
+      >
+        <div class="project-collage">
+          <div class="project-image ratio-tall img expand">
+            <img src="/photos/gearbox1.JPG" alt="Vibration Analysis" />
+          </div>
+          <div class="project-image ratio-tall img expand">
+            <img src="/photos/Programming.jpg" alt="Robotics Integration" />
+          </div>
+        </div>
+
+        <div class="card md:w-1/2 bg-[#222] p-6 rounded-xl">
+          <h3
+            class="text-[#14f2d7] text-xl font-bold mb-2"
+            data-en="Programming (C#, Python, ML & AI, Linux systems)"
+            data-de="Programmierung (C#, Python, ML & KI, Linux-Systeme)"
+          >
+            Programming (C#, Python, ML & AI, Linux systems)
+          </h3>
+          <p
+            data-en="Skilled in programming languages such as C# and Python, with experience in machine learning and AI applications. Proficient in Linux systems (Mint, Kali & Ubuntu) for development and deployment of software solutions. Worked on PCBs and embedded systems for industrial applications, using microprocessors like: STM32 and Raspberry Pi. Used LSTM and CNN models for predictive maintenance tasks."
+            data-de="Erfahren in Programmiersprachen wie C# und Python, mit Kenntnissen in maschinellem Lernen und KI-Anwendungen. Versiert in Linux-Systemen (Mint, Kali & Ubuntu) für Entwicklung und Bereitstellung von Softwarelösungen. Arbeitete an Leiterplatten (PCBs) und eingebetteten Systemen für industrielle Anwendungen unter Verwendung von Mikroprozessoren wie STM32 und Raspberry Pi. LSTM- und CNN-Modelle wurden für Aufgaben der vorausschauenden Wartung eingesetzt."
+          >
+            Skilled in programming languages such as C# and Python, with
+            experience in machine learning and AI applications. Proficient in
+            Linux systems (mint,kali&ubuntu) for development and deployment of
+            software solutions. Worked on PCBs and embedded systems for
+            industrial applications, using microprocessors like: STM32 and
+            Raspberry Pi. Used LSTM and CNN models for predictive maintenance
+            tasks.
+          </p>
+        </div>
+        <div
+          class="h-[2px] w-32 bg-gradient-to-r from-[#14f2d7] to-transparent"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Project 3 (SAP, MS office skills $ PowerBI )) -->
+    <section class="project-tab reveal" id="dataTools">
+      <div
+        class="section-containerproject flex flex-col md:flex-row-reverse gap-10 items-center"
+      >
+        <div class="project-collage">
+          <div class="project-image ratio-tall img expand">
+            <img src="/photos/documentation.jpg" alt="Documentation" />
+          </div>
+          <div class="project-image ratio-tall img expand">
+            <img src="/photos/powerpoint.jpg" alt="Programming" />
+          </div>
+        </div>
+
+        <div class="card md:w-1/2 bg-[#222] p-6 rounded-xl">
+          <h3
+            class="text-[#14f2d7] text-xl font-bold mb-2"
+            data-en="SAP, MS Office Skills & PowerBI"
+            data-de="SAP-, MS-Office-Kenntnisse & PowerBI"
+          >
+            SAP, MS Office Skills & PowerBI
+          </h3>
+          <p
+            data-en="Proficient in SAP for maintenance management, MS Office for reporting, and PowerBI for data visualization. I have created detailed maintenance reports, dashboards, and analytics to support decision-making and improve operational efficiency."
+            data-de="Versiert in SAP für Instandhaltungsmanagement, MS Office für Berichterstattung und PowerBI für Datenvisualisierung. Ich habe detaillierte Wartungsberichte, Dashboards und Analysen erstellt, um die Entscheidungsfindung zu unterstützen und die Betriebseffizienz zu verbessern."
+          >
+            Proficient in SAP for maintenance management, Microsoft Office for
+            reporting, and Power BI for data visualization. I have developed
+            detailed maintenance reports, interactive dashboards, and
+            data-driven analyses to support decision-making and improve
+            operational efficiency.
+          </p>
+          <p>
+            I have built and utilized pivot tables for advanced data analysis,
+            integrating them into Excel dashboards to deliver clear and
+            actionable insights for executive teams. Additionally, I automated
+            key analytics processes and scaled reporting capabilities using
+            Power BI.
+          </p>
+          <p>
+            The example on the right demonstrates my ability to integrate
+            PowerPoint and Excel to create tailored solutions that meet
+            organizational needs.
+          </p>
+        </div>
+        <div
+          class="h-[2px] w-32 bg-gradient-to-r from-[#14f2d7] to-transparent"
+        ></div>
+      </div>
+    </section>
+    <!-- Project 3 (SMP, IWS and Kaizen developments ) -->
+    <section class="project-tab reveal">
+      <div
+        class="section-container project flex flex-col md:flex-row gap-10 items-center"
+      >
+        <div class="project-collage">
+          <div class="project-image ratio-tall img expand">
+            <img src="/photos/3d printing.jpg" alt="Vibration Analysis" />
+          </div>
+          <div class="project-image ratio-tall img expand">
+            <img src="/photos/SMP.JPG" alt="Robotics Integration" />
+          </div>
+        </div>
+
+        <div class="card md:w-1/2 bg-[#222] p-6 rounded-xl">
+          <h3
+            class="text-[#14f2d7] text-xl font-bold mb-2"
+            data-en="SMP, IWS and Kaizen Developments"
+            data-de="SMP-, IWS- und Kaizen-Entwicklungen"
+          >
+            SMP, IWS and Kaizen Developments
+          </h3>
+          <p
+            data-en="Experience in implementing Secondary Manufacturing Practices (SMP) and Integrated Work Systems (IWS) to enhance operational efficiency and productivity. Through IWS experience in BAT, I have contributed to streamlining workflows, reducing waste, and improving overall manufacturing processes."
+            data-de="Erfahrung in der Umsetzung von Secondary Manufacturing Practices (SMP) und Integrated Work Systems (IWS) zur Steigerung der Betriebseffizienz und Produktivität. Durch IWS-Erfahrung bei BAT habe ich dazu beigetragen, Arbeitsabläufe zu optimieren, Verschwendung zu reduzieren und die gesamten Fertigungsprozesse zu verbessern."
+          >
+            Experience in implementing Secondary Manufacturing Practices (SMP)
+            and Intergrated Work Systems (IWS) to enhance operational efficiency
+            and productivity. Through IWS experience in BAT, I have contributed
+            to streamlining workflows, reducing waste, and improving overall
+            manufacturing processes.
+          </p>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- TESTIMONIALS TAB -->
+  <section class="section-container fun-tab-card reveal mt-16">
+    <h3
+      class="text-2xl font-bold text-[#14f2d7] mb-6 text-center"
+      data-en="Testimonials"
+      data-de="Referenzen"
+    >
+      Testimonials
+    </h3>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Testimonial 1 -->
+      <div class="bg-[#222] p-5 rounded-xl border border-[#14f2d7]/20">
+        <p
+          class="text-gray-300 text-sm mb-4"
+          data-en="Emmanuel showcased very self-driven behaviours during his assignment in module 2."
+          data-de="Emmanuel zeigte während seiner Aufgabe in Modul 2 ein hohes Maß an Eigeninitiative."
+        >
+          “Emmanuel showcased very self-driven behaviours during his assignment
+          in module 2. He has the right capabilities of solving problems to the
+          root cause.”
+        </p>
+        <div class="text-sm text-[#14f2d7] font-semibold">
+          Cyrus Njenga — Integrated Work Systems (IWS) Manager
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="bg-[#222] p-5 rounded-xl border border-[#14f2d7]/20">
+        <p
+          class="text-gray-300 text-sm mb-4"
+          data-en="Emmanuel's reapplications and Kaizen developments created strong teamwork and effective problem-solving forums."
+          data-de="Emmanuels Reapplikationen und Kaizen-Entwicklungen förderten starke Teamarbeit und effektive Problemlösungsforen."
+        >
+          “Emmanuel's reapplications and Kaizen developments as part of his
+          autonomous maintenance role brought more teamwork and created a good
+          forum for usage of problem solving tools.”
+        </p>
+        <div class="text-sm text-[#14f2d7] font-semibold">
+          Gabriel Owour — Primary Manufacturing Department Manager
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="max-w-5xl w-full mt-10 relative z-10">
+    <h2
+      class="text-3xl font-bold mb-10 text-center"
+      data-en="Career Timeline"
+      data-de="Karriereverlauf"
+    >
+      Career <span class="text-[#14f2d7]">Timeline</span>
+    </h2>
+
+    <!-- Vertical line -->
+    <div class="relative ml-6">
+      <div class="absolute left-0 top-0 h-full w-px bg-[#14f2d7]/30"></div>
+
+      <div class="space-y-10">
+        <!-- Item -->
+        <div class="reveal relative pl-12">
+          <span
+            class="absolute left-[-9px] top-2 w-4 h-4 bg-[#14f2d7] rounded-full"
+          ></span>
+          <h3 class="text-xl font-semibold">
+            Msc. Mechanics -Technische Universität Darmstadt
+          </h3>
+          <p class="text-sm text-gray-400 mb-2">2025 – Present</p>
+          <p class="text-gray-300 max-w-xl">
+            Industrial automation, PLC programming, robotics integration,
+            diagnostics and production optimization.
+          </p>
+        </div>
+
+        <!-- Item -->
+        <div class="reveal relative pl-12">
+          <span
+            class="absolute left-[-9px] top-2 w-4 h-4 bg-[#14f2d7] rounded-full"
+          ></span>
+          <h3 class="text-xl font-semibold">
+            Mechatronics Technician - British American Tobacco
+          </h3>
+          <p class="text-sm text-gray-400 mb-2">2023 – 2024</p>
+          <p class="text-gray-300 max-w-xl">
+            Loss Elimination, Speed up CBA, Electrical systems troubleshooting,
+            mechanical maintenance, sensor calibration and documentation.
+          </p>
+        </div>
+
+        <!-- Item -->
+        <div class="reveal relative pl-12">
+          <span
+            class="absolute left-[-9px] top-2 w-4 h-4 bg-[#14f2d7] rounded-full"
+          ></span>
+          <h3 class="text-xl font-semibold">
+            Mechatronics Industrial Apprenticeship - Olkaria Geothermal Power
+            Plant
+          </h3>
+          <p class="text-sm text-gray-400 mb-2">2022 – 2023</p>
+          <p class="text-gray-300 max-w-xl">
+            Hands-on training in industrial mechanics, safety procedures, and
+            production support. Routine maintenance and inspection, ensuing GMPs
+            conditions are met.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY AT BOTTOM (SCROLLING STRIP) -->
+  <!-- PHOTO GALLERY AT BOTTOM -->
+  <section id="gallery" class="max-w-full w-full mt-10 mb-2 overflow-hidden">
+    <h2
+      class="text-3xl font-bold text-center text-[#14f2d7] mb-6"
+      data-en="Photo Gallery"
+      data-de="Fotogalerie"
+    >
+      Photo <span class="text-white">Gallery</span>
+    </h2>
+
+    <div class="gallery-strip">
+      <div class="gallery-item object-contain">
+        <img src="/photos/expo1.JPG" alt="expo1" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/expo2.JPG" alt="expo2" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/1.JPG" alt="Photo 1" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/2.JPG" alt="Photo 2" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/3.JPG" alt="Photo 3" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/4.JPG" alt="Photo 4" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/5.JPG" alt="Photo 5" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/6.JPG" alt="Photo 6" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/7.JPG" alt="Photo 7" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/Bat2.jpg" alt="Photo 8" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/9.jpg" alt="Photo 9" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/10.jpg" alt="Photo 10" />
+      </div>
+
+      <!-- duplicate for seamless scroll -->
+      <div class="gallery-item object-contain">
+        <img src="/photos/expo1.JPG" alt="expo1" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/expo2.JPG" alt="expo2" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/1.JPG" alt="expo1" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/2.JPG" alt="expo2" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/3.JPG" alt="expo3" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/4.JPG" alt="expo4" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/5.JPG" alt="expo5" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/6.JPG" alt="expo6" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/7.JPG" alt="expo7" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/Bat2.jpg" alt="expo8" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/9.jpg" alt="expo9" />
+      </div>
+      <div class="gallery-item object-contain">
+        <img src="/photos/10.jpg" alt="Photo 10" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section
+    id="contact"
+    class="section-container reveal w-full md:max-w-4xl md:mx-auto mt-5 mb-0 relative z-10"
+  >
+    <div
+      class="relative bg-[#1b1b1b] w-full rounded-2xl p-2 md:p-2 overflow-hidden shadow-xl"
+    >
+      <!-- Glow background -->
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-[#14f2d7]/10 via-transparent to-transparent blur-3xl"
+      ></div>
+
+      <div class="relative z-10 text-center max-w-3xl mx-auto">
+        <h2
+          class="text-3xl md:text-4xl font-extrabold mb-4"
+          data-en="Let’s Build Something Meaningful"
+          data-de="Lass uns etwas Sinnvolles schaffen"
+        >
+          Let’s
+          <span class="text-[#14f2d7]">Build Something</span> Meaningful
+        </h2>
+
+        <p
+          class="text-gray-300 mb-8 text-base md:text-lg"
+          data-en="I enjoy working on systems that are reliable, efficient, and built to last."
+          data-de="Ich arbeite gerne an Systemen, die zuverlässig, effizient und nachhaltig aufgebaut sind."
+        >
+          I enjoy working on systems that are reliable, efficient, and built to
+          last — from industrial automation to predictive maintenance and
+          robotics integration.
+        </p>
+
+        <!-- Buttons -->
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="mailto:misiko.eng@gmail.com"
+            class="bg-[#14f2d7] text-black font-semibold px-6 py-3 rounded-full hover:scale-105 transition shadow-lg"
+          >
+            Contact Me
+          </a>
+
+          <a
+            href="/signup"
+            class="border border-[#14f2d7] text-[#14f2d7] px-6 py-3 rounded-full hover:bg-[#14f2d7]/10 transition"
+          >
+            Download CV
+          </a>
+        </div>
+
+        <!-- Philosophy line -->
+        <p
+          class="mt-10 text-sm text-gray-400 italic"
+          data-en="Great engineering is invisible — systems work quietly, reliably, and efficiently."
+          data-de="Großartige Ingenieurskunst ist unsichtbar – Systeme arbeiten leise, zuverlässig und effizient."
+        >
+          “Great engineering is invisible — systems work quietly, reliably, and
+          efficiently.”
+        </p>
+        <p class="portfolio-note mt-6 text-sm text-gray-400 max-w-2xl mx-auto">
+          <span class="text-[#14f2d7] font-medium">Note:</span>
+          Interested in this portfolio layout or want something similar built
+          for you? Reach out — I’m happy to help design and build a personalized
+          version.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <a
+    href="mailto:misiko.eng@gmail.com"
+    class="fixed bottom-6 right-6 z-50 bg-[#14f2d7] text-black font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition"
+  >
+    Hire Me
+  </a>
+</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Member Blog | Emmanuel Misiko{% endblock %}
+
+{% block content %}
+<main class="container py-10">
+  <section class="max-w-6xl mx-auto space-y-8">
+    <div class="rounded-[2rem] border border-[#14f2d7]/20 bg-[#111]/90 p-8 shadow-2xl shadow-black/20">
+      <p class="text-xs uppercase tracking-[0.35em] text-[#14f2d7] mb-3">Member Blog</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+        Welcome in, {{ member_name }}.
+      </h1>
+      <p class="text-gray-300 text-base md:text-lg leading-7 max-w-3xl">
+        Your blog access is ready. This is where members can read engineering notes,
+        project lessons, and behind-the-scenes reflections from the portfolio.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-4">
+        <a
+          href="/signup"
+          class="rounded-full bg-[#14f2d7] px-5 py-3 text-sm font-semibold text-black transition hover:scale-105"
+        >
+          Update access
+        </a>
+        <a
+          href="/"
+          class="rounded-full border border-[#14f2d7]/40 px-5 py-3 text-sm font-semibold text-[#14f2d7] transition hover:bg-[#14f2d7]/10"
+        >
+          Back to portfolio
+        </a>
+      </div>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      <article class="rounded-3xl border border-white/10 bg-[#171717] p-6">
+        <p class="text-xs uppercase tracking-[0.25em] text-[#14f2d7] mb-3">Post 01</p>
+        <h2 class="text-xl font-semibold mb-3">What robotics projects teach about systems thinking</h2>
+        <p class="text-sm leading-6 text-gray-400">
+          A short reflection on how integration work changes the way you design,
+          test, and troubleshoot complex engineering systems.
+        </p>
+      </article>
+
+      <article class="rounded-3xl border border-white/10 bg-[#171717] p-6">
+        <p class="text-xs uppercase tracking-[0.25em] text-[#14f2d7] mb-3">Post 02</p>
+        <h2 class="text-xl font-semibold mb-3">Predictive maintenance starts with better observation</h2>
+        <p class="text-sm leading-6 text-gray-400">
+          Notes on routine checks, vibration analysis, and the habits that help
+          prevent avoidable machine failure.
+        </p>
+      </article>
+
+      <article class="rounded-3xl border border-white/10 bg-[#171717] p-6">
+        <p class="text-xs uppercase tracking-[0.25em] text-[#14f2d7] mb-3">Post 03</p>
+        <h2 class="text-xl font-semibold mb-3">From workshop floor to technical storytelling</h2>
+        <p class="text-sm leading-6 text-gray-400">
+          How practical project work becomes useful writing for clients, collaborators,
+          and future employers.
+        </p>
+      </article>
+    </div>
+  </section>
+</main>
+{% endblock %}

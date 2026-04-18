@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Emmanuel Misiko | Portfolio{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body
+    class="relative text-white min-h-screen flex flex-col items-center"
+    style="
+      background: linear-gradient(
+        135deg,
+        #161616 0%,
+        #1a1a1a 40%,
+        #2c1f4a 100%
+      );
+    "
+>
+    {% block content %}{% endblock %}
+    <script src="{{ url_for('static', path='script.js') }}" defer></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

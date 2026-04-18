@@ -1,0 +1,587 @@
+
+/* ---------------- GLOBAL STYLES ---------------- */
+/* Reset default margin and padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+#home,
+#expertise,
+#innovation,
+#experience,
+#gallery,
+#contact {
+  scroll-margin-top: 6rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card,
+  .fun-fact-tab,
+  .fun-tab-card,
+  .profile-content,
+  section {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .profile-content,
+  .fun-fact-tab-content {
+    max-width: 100%;
+    padding: 1.25rem;
+  }
+}
+@media (max-width: 768px) {
+  .project {
+    flex-direction: column;
+  }
+
+  .project-collage {
+    width: 100%;
+  }
+
+  .project-image {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .lang-toggle-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* ---------- MOBILE-FIRST CONTAINERS ---------- */
+.section-container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 1rem;   /* 16px */
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-container {
+    max-width: 1280px;
+    padding-left: 5rem; /* 80px */
+    padding-right: 5rem;
+  }
+}
+
+/* ---------- MOBILE TYPOGRAPHY ---------- */
+h1 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Desktop upgrades */
+@media (min-width: 768px) {
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.2rem; }
+  h3 { font-size: 1.5rem; }
+  p  { font-size: 1rem; }
+}
+
+
+/* Center content and limit max width */
+.container {
+  max-width: 1200px;   /* prevents content from stretching too wide */
+  margin: 0 auto;       /* centers horizontally */
+  padding: 1rem;        /* some spacing on smaller screens */
+}
+
+.nav-pill {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  padding: 0.55rem 0.9rem;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.nav-pill:hover {
+  background: rgba(20, 242, 215, 0.12);
+  border-color: rgba(20, 242, 215, 0.35);
+  color: #ffffff;
+}
+/* ---------------- LANGUAGE TOGGLE ---------------- */
+.lang-toggle-btn {
+  background-color: #14f2d7;
+  color: #000;
+  font-weight: 700;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lang-toggle-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 35px rgba(20,242,215,0.9);
+}
+
+/* Soft glow pulse — NO translate, NO vibration */
+@keyframes softPulse {
+  0%, 100% { box-shadow: 0 0 18px rgba(20,242,215,0.6); }
+  50%      { box-shadow: 0 0 38px rgba(20,242,215,1); }
+}
+
+.lang-pulse {
+  animation: softPulse 2.5s ease-in-out infinite;
+}
+
+/* ---------------- SHAPES ---------------- */
+.clip-path-triangle {
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at top left, rgba(20,242,215,0.05), transparent 70%),
+              radial-gradient(circle at bottom right, rgba(20,242,215,0.05), transparent 70%);
+}
+
+/* ---------------- BACKGROUND (CIRCUITS + GEARS) ---------------- */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420' viewBox='0 0 420 420'%3E%3Cstyle%3E.gear%7Banimation:spin 60s linear infinite;transform-origin:center%7D@keyframes spin%7Bto%7Btransform:rotate(360deg)%7D%7D%3C/style%3E%3Cpath d='M40 80 H380 M80 40 V380 M160 40 V380 M240 40 V380 M320 40 V380' stroke='%2314f2d7' stroke-width='2' stroke-opacity='0.18'/%3E%3Cg class='gear' transform='translate(90 90)'%3E%3Ccircle r='18' fill='none' stroke='%2314f2d7' stroke-width='2' stroke-opacity='0.25'/%3E%3Cpath d='M-12 0 L-8 6 L-3 9 L0 12 L3 9 L8 6 L12 0 L8 -6 L3 -9 L0 -12 L-3 -9 L-8 -6 Z' fill='none' stroke='%2314f2d7' stroke-opacity='0.25'/%3E%3C/g%3E%3Cg class='gear' transform='translate(330 330)'%3E%3Ccircle r='26' fill='none' stroke='%2314f2d7' stroke-width='2' stroke-opacity='0.25'/%3E%3Cpath d='M-16 0 L-11 8 L-4 12 L0 16 L4 12 L11 8 L16 0 L11 -8 L4 -12 L0 -16 L-4 -12 L-11 -8 Z' fill='none' stroke='%2314f2d7' stroke-opacity='0.25'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 420px 420px;
+  animation: drift 120s linear infinite;
+}
+
+@keyframes drift {
+  from { background-position: 0 0; }
+  to { background-position: 900px 900px; }
+}
+
+/* ---------------- INTRO GLOW ---------------- */
+.intro-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(20,242,215,.45), transparent 70%);
+  filter: blur(70px);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,100% { opacity: .4 }
+  50% { opacity: .85 }
+}
+
+/* ---------------- SCROLL REVEAL ---------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- EXPERTISE MOBILE LAYOUT ---------- */
+
+.expertise-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.expertise-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.5rem;
+  background: rgba(20,242,215,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.expertise-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #14f2d7;
+  line-height: 1.2;
+}
+
+.expertise-desc {
+  font-size: 0.875rem;
+  color: #d1d5db;
+  line-height: 1.5;
+}
+
+/* ---------------- STAT CARD HOVER EFFECT ---------------- */
+.stat-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (hover: hover) {
+  .stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(20, 242, 215, 0.25);
+  }
+}
+
+
+
+/* ---------------- PROJECT IMAGE STANDARD ---------------- */
+.project-image {
+  width: 100%;
+  max-width: 42rem;      /* 672px */
+  height: 18rem;         /* 288px */
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .project-image {
+    height: 24rem;       /* 384px */
+  }
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+/* Aspect ratio variants */
+.project-image.ratio-square { aspect-ratio: 1 / 1; height: auto; }
+.project-image.ratio-wide   { aspect-ratio: 16 / 9; height: auto; }
+.project-image.ratio-tall   { aspect-ratio: 3 / 4; max-height: auto; }
+
+/* Contain mode – no cropping */
+.project-image.contain img {
+  object-fit: contain;
+}
+
+/* Hover expand (safe, no blur) */
+.project-image.expand {
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.project-image.expand:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 40px rgba(20,242,215,.35);
+  z-index: 20;
+}
+
+
+/* ---------- PROJECT COLLAGE ---------- */
+.project-collage {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .project-collage {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------------- HOVER ---------------- */
+.project-image img {
+  transition: transform .5s ease, box-shadow .5s ease;
+}
+.project:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(20,242,215,.35);
+}
+
+/* ---------------- PROJECT CARD LIFT ---------------- */
+
+.project .card {
+  transition: transform .4s ease;
+}
+
+.project:hover .card {
+  transform: translateY(-6px);
+}
+
+@keyframes tech-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-tech-scroll {
+  width: max-content;
+  animation: tech-scroll 35s linear infinite;
+}
+
+.project-tab {
+  position: relative;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  border: 2px solid rgba(20, 242, 215, 0.9);
+  background: linear-gradient(
+    135deg,
+    rgba(20, 242, 215, 0.05),
+    rgba(0, 0, 0, 0.4)
+  );
+  box-shadow:
+    0 0 0 1px rgba(20, 242, 215, 0.6),
+    0 0 30px rgba(20, 242, 215, 0.25);
+  margin-bottom: 3rem;
+}
+@media (max-width: 768px) {
+  .project-tab {
+    padding: 1.25rem;
+    border-width: 2px;
+  }
+}
+
+.project-tab::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(
+    circle,
+    rgba(20, 242, 215, 0.6),
+    transparent 70%
+  );
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+/* ---------------- FUN FACT ANIMATION ---------------- */
+
+/* Floating motion */
+.fun-fact {
+  padding-top: 4.5rem; /* adjust as needed */
+  animation: floaty 6s ease-in-out infinite;
+}
+
+/* Soft glow pulse */
+.fun-fact::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 1rem;
+  background: radial-gradient(circle at top left,
+    rgba(20,242,215,0.25),
+    transparent 60%);
+  opacity: 0.6;
+  filter: blur(20px);
+  z-index: -1;
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+/* Hover interaction */
+.fun-fact:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 50px rgba(20,242,215,0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Icon pulse */
+.fun-fact .text-5xl {
+  animation: iconPulse 3s ease-in-out infinite;
+}
+
+/* Animations */
+
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+/* Fun Fact Tab Animation Fix (too much vibration on text) */
+.fun-fact-tab {
+  opacity: 0;                  /* hidden initially */
+  transform: translateY(20px); /* this moves it up and down */
+  transition: all 0.8s ease-out;
+  padding: 0.25rem;
+}
+@media (min-width: 768px) {
+  .fun-fact-tab {
+    padding: 2rem;
+  }
+}
+
+.fun-fact-tab.active {
+  opacity: 1;                  /* fade in */
+  transform: translateY(0);    /* no vertical movement */
+}
+
+/* Subtle hover glow for tab */
+.fun-fact-tab:hover {
+  box-shadow: 0 0 20px rgba(20,242,215,0.35);
+  transition: box-shadow 0.4s ease;
+}
+
+/* Text stays stable - no vibration */
+.fun-fact-text {
+  transition: color 0.3s ease;
+}
+
+.fun-fact-tab:hover .fun-fact-text {
+  color: #14f2d7;              /* neon glow effect on hover */
+}
+
+/* Mobile-only permanent glow */
+@media (max-width: 640px) {
+  .glow-mobile {
+    box-shadow:
+      0 0 0 1px rgba(20, 242, 215, 0.3),
+      0 0 25px rgba(20, 242, 215, 0.35),
+      0 0 60px rgba(20, 242, 215, 0.15);
+  }
+}
+
+
+/* ---------------- GALLERY SCROLL ---------------- */
+@keyframes gallery-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-gallery-scroll {
+  display: flex;
+  width: max-content;
+  animation: gallery-scroll 40s linear infinite;
+}
+  /* Horizontal scrolling for gallery strip */
+  .gallery-strip {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    animation: scrollGallery 30s linear infinite;
+  }
+
+  @keyframes scrollGallery {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* Pause animation on hover */
+  .gallery-strip:hover {
+    animation-play-state: paused;
+  }
+
+  /* Image container */
+  .gallery-item {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 1rem;
+    position: relative;
+    transition: all 0.5s ease;
+    cursor: pointer;
+  }
+
+  /* Enlarge the image and container on hover */
+  .gallery-item:hover {
+    width: 350px; /* enlarge width */
+    height: 500px; /* enlarge height */
+    z-index: 50;   /* bring on top */
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+  }
+
+  @media (max-width: 640px) {
+  .gallery-strip {
+    animation-duration: 60s;
+  }
+
+  .gallery-item:hover {
+    width: 200px;
+    height: 150px;
+  }
+}
+
+
+/* ---------------- PORTFOLIO NOTE ANIMATION ---------------- */
+
+    /* Reveal + fade-in animation */
+.portfolio-note {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+/* When active (scroll into view) */
+.portfolio-note.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtle hover glow */
+.portfolio-note:hover {
+  text-shadow: 0 0 12px rgba(20,242,215,0.6);
+  color: #14f2d7;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.access-panel {
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+}
+
+.access-panel:hover {
+  box-shadow: 0 28px 70px rgba(20, 242, 215, 0.12);
+  transition: box-shadow 0.35s ease;
+}
