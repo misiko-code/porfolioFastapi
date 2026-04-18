@@ -117,8 +117,9 @@ async def signup_submit(
     # grant blog access if applicable
     if success and access_request in BLOG_ACCESS_OPTIONS:
         return templates.TemplateResponse(
-            "blog.html",
-            {
+            request=request,
+            name="blog.html",
+            context={
                 "request": request,
                 "member_name": full_name,
             },

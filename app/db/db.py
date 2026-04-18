@@ -4,28 +4,51 @@ from datetime import datetime, timezone
 from pymongo import MongoClient
 from pymongo.errors import PyMongoError
 
-
-MONGODB_URL = os.getenv("MONGODB_URL", "mongodb+srv://misikoeng:%23Manu2396@iot-cluster.jkuukl6.mongodb.net/")
-MONGODB_DB_NAME = os.getenv("MONGODB_DB_NAME", "portfolioUser")
-
 _client: MongoClient | None = None
 
 
+# ---------------------------
+# Config (loaded at runtime)
+# ---------------------------
+
+def get_settings():
+    mongo_uri = os.getenv("MONGO_URI")
+    db_name = os.getenv("MONGO_DB_NAME", "portfolioUser")
+
+    if not mongo_uri:
+        raise RuntimeError("MONGO_URI is not set in environment variables")
+
+    return mongo_uri, db_name
+
+
+# ---------------------------
+# Connection
+# ---------------------------
+
 def get_mongo_client() -> MongoClient:
     global _client
+
     if _client is None:
-        _client = MongoClient(MONGODB_URL, serverSelectionTimeoutMS=3000)
+        mongo_uri, _ = get_settings()
+        _client = MongoClient(mongo_uri, serverSelectionTimeoutMS=3000)
+
     return _client
 
 
 def get_clients_collection():
     client = get_mongo_client()
-    return client[MONGODB_DB_NAME]["clients"]
+    _, db_name = get_settings()
+    return client[db_name]["clients"]
 
+
+# ---------------------------
+# CRUD
+# ---------------------------
 
 def save_client_signup(form_data: dict) -> str:
     collection = get_clients_collection()
     now = datetime.now(timezone.utc)
+
     email = form_data["email"].strip().lower()
 
     payload = {
@@ -48,6 +71,10 @@ def save_client_signup(form_data: dict) -> str:
 
     return "created" if result.upserted_id else "updated"
 
+
+# ---------------------------
+# Health Check
+# ---------------------------
 
 def mongo_is_available() -> bool:
     try:
