@@ -1,7 +1,7 @@
 import os
 
 import stripe
-from core.config import STRIPE_PUBLISHABLE_KEY, STRIPE_SECRET_KEY
+from app.core.config import STRIPE_PUBLISHABLE_KEY, STRIPE_SECRET_KEY
 
 
 

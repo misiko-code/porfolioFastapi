@@ -4,7 +4,7 @@ import stripe
 from fastapi import APIRouter, Request, HTTPException
 from fastapi.responses import JSONResponse
 
-from core.config import STRIPE_WEBHOOK_SECRET
+from app.core.config import STRIPE_WEBHOOK_SECRET
 
 router = APIRouter()
 

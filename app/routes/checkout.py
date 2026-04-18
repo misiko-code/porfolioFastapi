@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse, RedirectResponse
 from fastapi import Request
 from fastapi.templating import Jinja2Templates
 
-from core.config import STRIPE_PUBLISHABLE_KEY, DOMAIN
+from app.core.config import STRIPE_PUBLISHABLE_KEY, DOMAIN
 from services.stripe_service import (
     get_price,
     create_checkout_session,

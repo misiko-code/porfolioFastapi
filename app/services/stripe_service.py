@@ -1,5 +1,5 @@
 import stripe
-from core.config import PRICE, DOMAIN
+from app.core.config import PRICE, DOMAIN
 
 
 def get_price():
