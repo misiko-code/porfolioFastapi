@@ -4,7 +4,7 @@ from fastapi import Request
 from fastapi.templating import Jinja2Templates
 
 from app.core.config import STRIPE_PUBLISHABLE_KEY, DOMAIN
-from services.stripe_service import (
+from app.services.stripe_service import (
     get_price,
     create_checkout_session,
     get_checkout_session
